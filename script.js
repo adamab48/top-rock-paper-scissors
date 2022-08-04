@@ -18,10 +18,9 @@ function getRandomChoice() {
     return choice;
 }
 
-function change() {
+function playRoundandupdate(e) {
     
-
-    playRound(getRandomChoice(),getRandomChoice());
+    playRound(getRandomChoice(),e);
     roundNumber++;
     document.getElementsByClassName("rounds")[0].innerHTML ="Rounds played : " + roundNumber;
    }
@@ -82,4 +81,11 @@ function playRound(computerchoice, playerchoice) {
     } */
 
 
+let weapons = document.querySelectorAll(".weapons img");
+
+for (let i = 0; i < weapons.length; i++) {
+    weapons[i].addEventListener("click", () => {
+        playRoundandupdate(weapons[i].name);
+    });
+}
 

@@ -85,3 +85,40 @@ body {
     font-size: large;
     
 }
+
+
+
+.weapons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.weapons img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px ;
+    margin: 10px;
+    border: 3px solid black;
+    cursor: pointer;
+    transition: opacity 0.5s;
+
+}
+.weapons img:hover {
+    opacity: 0.6;
+}
+.weapon-text {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 10px;
+    background-color: #ffaa83;
+    cursor: default;
+ 
+    
+}
+

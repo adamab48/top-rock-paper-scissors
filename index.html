@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>Rock Paper Scissors Game 
+    <header>
+        Rock Paper Scissors Game 
         <img src="images/paper.gif" alt="">
         <img src="images/rock.gif" alt="">
         <img src="images/scissors.gif" alt="">
@@ -26,12 +27,16 @@
             <div class="score">
                 Draw
             </div>
-           
-            <button class="playbutton" onclick="change()">Play</button>
+            <div class="weapon-text">Choose Your Weapon !</div>
+            <div class="weapons">
+                <img src="images/paper.gif" alt="" name="paper">
+                <img src="images/rock.gif" alt="" name="rock">
+                <img src="images/scissors.gif" alt="" name="scissors">
+            </div>
         </div>
         <div class="rect">
             <img src="images/paper.gif" alt="" name="computer">
-            <span>- Computer -</span>
+            <span>- Computer -</span>   
         </div>
     </div>
 </body>
