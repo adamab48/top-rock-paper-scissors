@@ -19,7 +19,7 @@ function getRandomChoice() {
 }
 
 function playRoundandupdate(e) {
-    
+    console.log("CALLBACK " + roundNumber);
     playRound(getRandomChoice(),e);
     roundNumber++;
     document.getElementsByClassName("rounds")[0].innerHTML ="Rounds played : " + roundNumber;
@@ -88,4 +88,6 @@ for (let i = 0; i < weapons.length; i++) {
         playRoundandupdate(weapons[i].name);
     });
 }
+
+
 
