@@ -7,6 +7,7 @@ var roundNumber = 0;
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
+    console.log(Math.floor(Math.random() * (max - min + 1) + min))
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
@@ -18,7 +19,7 @@ function getRandomChoice() {
     return choice;
 }
 
-function playRoundandupdate(e) {
+ function playRoundandupdate(e) {
     console.log("CALLBACK " + roundNumber);
     playRound(getRandomChoice(),e);
     roundNumber++;
@@ -28,47 +29,49 @@ function playRoundandupdate(e) {
 
 
 function playRound(computerchoice, playerchoice) {
-    let playerimage = document.getElementsByName("player")[0];
-    let computerimage = document.getElementsByName("computer")[0];
+    let playerimage = document.getElementById("player");
+    let computerimage = document.getElementById("computer");
     let player = playerchoice.toLowerCase();
     let computer = computerchoice.toLowerCase();
-    let result = document.getElementsByClassName("score")[0];
-    if (player == computer) {
-        return "Draw";
+    let result = document.getElementById("score");
+    images = {
+        'rock' : "./images/rock.gif",
+        'paper' : "./images/paper.gif",
+        'scissors' : "./images/scissors.gif"
     }
-    else if (player == "rock") {
-        if (computer == "paper") {
-            computerimage.src = "./images/paper.gif";
-            playerimage.src = "./images/rock.gif";
+
+    computerimage.src = images[computer]
+    playerimage.src = images[player]
+    
+    if (player === computer) {
+        result.innerHTML = "Draw";
+        return
+    }
+
+    
+
+
+    if (player === "rock") {
+        if (computer === "paper") {
             result.innerHTML = "Computer Wins !";
         }
         else {
-            computerimage.src = "./images/scissors.gif";
-            playerimage.src = "./images/rock.gif";
             result.innerHTML = "Player Wins !";
         }
     }
-    else if (player == "paper") {
-        if (computer == "scissors") {
-            computerimage.src = "./images/scissors.gif";
-            playerimage.src = "./images/paper.gif";
+    else if (player === "paper") {
+        if (computer === "scissors") {
             result.innerHTML = "Computer Wins !";
         }
         else {
-            computerimage.src = "./images/rock.gif";
-            playerimage.src = "./images/paper.gif";
             result.innerHTML = "Player Wins !";
         }
     }
-    else if (player == "scissors") {
-        if (computer == "rock") {
-            computerimage.src = "./images/rock.gif";
-            playerimage.src = "./images/scissors.gif";
+    else if (player === "scissors") {
+        if (computer === "rock") {
             result.innerHTML = "Computer Wins !";
         }
         else {
-            computerimage.src = "./images/paper.gif";
-            playerimage.src = "./images/scissors.gif";
             result.innerHTML = "Player Wins !";
         }
     }
@@ -88,6 +91,8 @@ for (let i = 0; i < weapons.length; i++) {
         playRoundandupdate(weapons[i].name);
     });
 }
+
+
 
 
 
